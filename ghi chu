@@ -17,3 +17,15 @@
 
 
 //gitignore tranh commit len git cac file trong gitignore
+
+//Cai prettier để format lại các code 
+//lint-staged //chay file tren git neu khong co tren git khong chay
+//husky
+
+npm i prettier lint-staged husky --save-dev
+
+//prettier vao do de xem cau truc fotmat theo tung file
+//
+
+//Cai mongoose để quản lý dữ liệu chặc chẻ hơn 
+//quang ly mongodb giong mysql

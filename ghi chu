@@ -29,3 +29,7 @@ npm i prettier lint-staged husky --save-dev
 
 //Cai mongoose để quản lý dữ liệu chặc chẻ hơn 
 //quang ly mongodb giong mysql
+
+//slug: dung slug trong database se hien data len
+
+//dung handlebars

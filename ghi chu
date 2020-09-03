@@ -33,3 +33,7 @@ npm i prettier lint-staged husky --save-dev
 //slug: dung slug trong database se hien data len
 
 //dung handlebars
+
+//dung mongoose de truy van du lieu
+
+mongoose generation de lay slug

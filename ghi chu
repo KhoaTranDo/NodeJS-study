@@ -1,5 +1,6 @@
 //Cai node js
 
+//npm init  
 //Cai npm express
 
 // chay expressjs
@@ -37,3 +38,5 @@ npm i prettier lint-staged husky --save-dev
 //dung mongoose de truy van du lieu
 
 mongoose generation de lay slug
+ 
+  cai $ npm install response-time de update data

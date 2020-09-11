@@ -1,0 +1,32 @@
+<div class="mt-4">
+    <h3>Khóa học của tôi</h3>
+
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên Khóa học</th>
+            <th scope="col">Trình Độ</th>
+            <th scope="col">THời gian tạo</th>
+            <th scope="col">Truy Vấn </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each courses}} 
+            {{!-- //Load Toanf bo du lieu tu mongodb --}}
+            <tr>
+            <th scope="row">{{sum @index 1}}</th>
+            <td>{{this.name}}</td>
+            <td>{{this.image}}</td>
+            <td>{{this.createdAt}}</td>
+            <td>
+                <a class="btn btn-link" href="">Xóa</a>
+                <a class="btn btn-link" href="/courses/{{this._id}}/edit">Sửa</a>
+            </td>
+            </tr>
+            {{/each}}
+            
+        </tbody>
+        </table>
+</div>

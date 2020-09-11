@@ -1,3 +1,6 @@
+const { mongooseToObject } = require('../../util/mongoose');
+
+
 class NewsController {
   //Get /news
   index(req, res) {

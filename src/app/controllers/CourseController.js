@@ -1,5 +1,6 @@
 const Course = require("../models/Course")
 const { mongooseToObject } = require('../../util/mongoose');
+const { renderSync } = require("node-sass");
 
 class CourseController {
   //Get /news
@@ -17,15 +18,30 @@ class CourseController {
   //[POST] courses/create/store
   store(req, res, next) {
     const formdata = req.body;
-    formdata.image= `https://img.youtube.com/vi/${req.body.videoId}/default.jpg`
-    const course=new Course(req.body);
+    formdata.image= `https://img.youtube.com/vi/${formdata.videoId}/default.jpg`;
+    const course=new Course(formdata);
     course.save()
     .then(() => res.redirect(`/`))
     .catch(error =>{
 
     })
-
-    res.send("Course save")
+   // res.json(req.body)
+    // res.send("Course save")
+  }
+  //[GET] /courses/:id/edit
+  edit(req, res, next) {
+    Course.findById(req.params.id)
+      .then(course =>res.render("courses/edit",{
+          course: mongooseToObject(course)
+    }))
+    .catch(next);
+}
+ //[PUT] /courses/:id update du lieu
+   update(req, res, next) {
+    const formdata = req.body;
+    Course.updateOne({_id : req.params.id},formdata)
+    .then(() => res.redirect('/me/stored/courses') )
+    .catch(next)
 }
 }
 module.exports = new CourseController();

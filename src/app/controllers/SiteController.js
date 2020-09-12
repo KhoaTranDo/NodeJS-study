@@ -15,10 +15,18 @@ class SiteController {
     //   }
     // });
 
-    Course.find({})
-          .then(courses => {
-            courses=courses.map(courses=>courses.toObject())
-            res.render('home',{courses});
+    // Course.find({})
+    //       .then(courses => {
+    //         courses=courses.map(courses=>courses.toObject())
+    //         res.render('home',{courses});
+    //       })
+    //       .catch(next);
+
+          Course.find({})
+          .then((courses) => {
+              res.render('home', {
+                  courses: mutipleMongooseToObject(courses),
+              });
           })
           .catch(next);
   }

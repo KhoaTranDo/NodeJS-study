@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
-const methodoverride = require('method-override');
+const methodOverride = require('method-override');
 
 
 const route = require('./routes');
@@ -29,7 +29,7 @@ app.use(
   }),
 );
 app.use(express.json());
-app.use(methodoverride('_method'))
+app.use(methodOverride('_method'))
 
 route(app);
 

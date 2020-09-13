@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const slug = require('mongoose-slug-generator');
+const mongooseDelete = require('mongoose-delete')
 
-mongoose.plugin(slug);
 
 const Course = new Schema({
   name: {type : String},
@@ -16,6 +16,12 @@ const Course = new Schema({
 },
 {
   timestamps:true,
-});
+}
+);
+//Add plusgin
+mongoose.plugin(slug);
+Course.plugin(mongooseDelete,{ 
+  deletedAt: true,
+  overrideMethods: 'all'})
 
 module.exports = mongoose.model('Course',Course);

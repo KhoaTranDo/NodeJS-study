@@ -1,5 +1,8 @@
 <div class="mt-4">
+  <div>
     <h3>Khóa học của tôi</h3>
+    <a href="/me/trash/courses" >Vào thùng rác {{deletedCount}}</a>
+  </div>
 
 
     <table class="table mt-4">
@@ -25,6 +28,13 @@
                 <a class="btn btn-link" href="/courses/{{this._id}}/edit">Sửa</a>
             </td>
             </tr>
+            {{else}}
+              <tr>
+                <td colspan="5" class="text-center">Dữ liệu rỗng.
+                  <a href="/courses/create" class="">Đăng khóa học</a>
+                </td>
+                
+               </tr>
             {{/each}}
             
         </tbody>

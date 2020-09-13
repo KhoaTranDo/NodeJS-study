@@ -40,3 +40,5 @@ npm i prettier lint-staged husky --save-dev
 mongoose generation de lay slug
  
   cai $ npm install response-time de update data
+
+  Cai npm install mongoose-delete de thuc hien xoa data
